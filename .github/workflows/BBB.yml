@@ -24,5 +24,5 @@ jobs:
               run: |
                   node BBB.js
               env:
-                  BBBCK: ${{ secrets.BBB_COOKIE }}
+                  BBBCK: ${{ secrets.BBB_CK }}
                   PUSH_KEY: ${{ secrets.PUSH_KEY }}
