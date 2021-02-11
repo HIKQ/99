@@ -8,10 +8,10 @@
 
 let s = 1000 //各数据接口延迟
 const $ = new Env("中青看点")
-let notifyInterval = $.getdata("notifytimes")||50 //通知间隔，默认抽奖每50次通知一次，如需关闭全部通知请设为0
+let notifyInterval = $.getdata("notifytimes")||100 //通知间隔，默认抽奖每50次通知一次，如需关闭全部通知请设为0
 const YOUTH_HOST = "https://kd.youth.cn/WebApi/";
 const notify = $.isNode() ? require('./sendNotify') : '';
-const withdrawcash = $.getdata('zqcash')||30 //提现金额
+const withdrawcash = $.getdata('zqcash')||10 //提现金额
 let withdrawUrl =$.getdata('cashurl_zq')
 let withdrawBody =$.getdata('cashbody_zq')
 
@@ -263,11 +263,11 @@ function userInfo() {
 function withDraw() {
     return new Promise((resolve, reject) => {
         const url = {
-            url: withdrawUrl,
+            url: https://ios.baertt.com/v5/wechat/withdraw2.json,
             headers: {
             'User-Agent': 'KDApp/2.0.0 (iPhone; iOS 14.5; Scale/3.00)'
             },
-            body: withdrawBody,
+            body: p=9NwGV8Ov71o%3DGvDnjwMsu_ld4qx0YVkhCGSN79Nz9uYVRT2FlKyzzeRQkfNpi91m1uMr6_-349OB-6aJlP8QT1ZdQPfuBKAN73038JxG2PDvPLwzRpKLSOsodHj_5p2KvGLJLTxe6lfbK5_TBTkHhXvca5GLmeMMIM2me3E4Xk0LlYXICZPYUVSR28kg8IZLbcwnzzbZprUcdmDQdFJ_i9PjR81JIvleQvYrx53QabLZlHs6AkIflTFgGNQ_0xC7vCn5S9bg-0qRGIJmVvXhNBjEYqMUB9iUUNn9dnVhHk7VtzWwMBDbJjnbWb-9DWPCTGhma4aLGu22uyTdYS0IulKjPh82WD3su-6qhg_rasXJAa3XJR-tYpjPv96_SilNrik8Jl7aBXYIusf_dqW_-oyyGHxk8HFpnxnmN-guJav0tzu85mA__GH85dJqDD4pj3E9RzIVZw4pV05zKnrPLjg8pwXqYdviUg1z-3R3J5fXNq1EAR9D9z_GAw-yaR4eGPMsUHT9dUPbWT6TeSBNAbfMLUwQbUwkzpIWaHaqdIjIdTk-0bs4cjn1G9_0iaOyGIp5qRswW4rvh9utUjpSuq_Nz7gEKylY4dxhNUmGV3JOZ0CHbpW5v9egJDsQoIzBhN6s7056OpDxf02lSnyRZoyhIrJfqwYU0LvQpJ9DL94tx7xwFX4hJawJ2kMMEB98NQqT7QQyPjPSMDsxY4O1IDsmMl00T4Ci_pEzqm9rUn-73aFrSig07A81c0rsewtHo2Fo-HDriJFOYgSzHzOqKjLNh8wtRvePDH_KNgg9m5hZxDLxyynkXzrTaevs2PWkU0Wpl1tbv7hPgiiaiLW_3FI%3D,
         }
         $.post(url, (error, response, data) => {
             withDrawres = JSON.parse(data)
