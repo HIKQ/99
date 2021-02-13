@@ -1,5 +1,5 @@
 
-name: 百度极速版
+name: bdjs
 
 on:
   workflow_dispatch:
@@ -24,7 +24,7 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【百度极速】'
+      - name: '运行 【bdjs】'
         if: env.BAIDU_COOKIE
         run: |
           node Task/baidu_speed.js
