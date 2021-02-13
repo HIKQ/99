@@ -3,7 +3,7 @@ name: zmsp
 on:
   workflow_dispatch:
   schedule:
-     - cron: '0 */1 * * *'
+     - cron: '0 0 29 2 *'
   watch:
     types: started
 jobs:
@@ -28,7 +28,7 @@ jobs:
       - name: '运行 【zmsp】'
         if: env.ZM_HD
         run: |
-          node scripts/zmsp.js
+          node Task/zmsp.js
         env:
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
