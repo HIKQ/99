@@ -25,5 +25,4 @@ jobs:
                   node Task/zmsp.js
               env:
                  zmhd: ${{ secrets.zmhd }}
-                 zmurl: ${{ secrets.zmurl }}
-                 zmhd: ${{ secrets.zmbody }}
+
