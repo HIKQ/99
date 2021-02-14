@@ -1,32 +1,84 @@
+> 中国联通APP登录 签到 金币 任务 解流量封顶  
+新增使用github自动运行，无需自己的服务器
+## 使用方法
 
-#本仓库不再维护
+### 1.Fork 本仓库
+
+### 2.添加secret
+设置 `PARAMETER` 的值为脚本支持的参数，间隔符使用空格即可。  
+进入仓库后点击 `Settings`，右侧栏点击 `Secrets`，点击 `New secret`。添加 `PARAMETER` 的值，为脚本支持的参数如： `membercenter 12345678901@112233 01234567891@123456 appId@247b001385de5cc6ce11731ba1b15835313d489d604e58280e455a6c91e5058651acfb0f0b77029c2372659c319e02645b54c0acc367e692ab24a546b83c302d`  
+
+#### Secrets参数 `PARAMETER` 具体说明:
+| 参数 |  说明  |
+| -------- | ----- |
+| `membercenter` |   加入这个表示会运行除激活流量包的所有签到活动，无则不会签到|
+| `niujieactive` |   加入这个表示会运行牛节活动，无则不参加|
+| `12345678901@112233` |   为 11位手机号码@6位服务密码，有多个手机号则依次添加即可|
+| `appId@xxxx` |   其中xxxx为appld值，具体可抓包或者安卓使用下面的方法获得|
+| `liulactive@d@ff80808166c5ee6701676ce21fd14716` |   为流量包激活激活所需参数，中间d表示每天,w表示每周一,m代表每月第二天，ff80~4716为1g流量日包id值。比如左边参数代表为所有手机号每天激活一个1g流量日包|
+| `liulactive@d@ff80808166c5ee6701676ce21fd14716@13012341234-18812341234` |   代表仅为手机号13012341234和18812341234每天激活一个1g流量日包，其余手机号不执行流量包激活|
+| `token@*** chat_id@***` |   为telegram bot通知所需参数，无则不进行通知|
+
+##### 各流量包id具体值：
+| 流量包名 |  id值  |
+| -------- | ----- |
+| 1GB日包 |   `ff80808166c5ee6701676ce21fd14716`|
+| 2GB日包 |   `21010621565413402`|
+| 5GB日包 |   `21010621461012371`|
+| 10GB日包 |   `21010621253114290`|
+| 4GB流量七日包 |   `20080615550312483`|
+| 100MB全国流量月包 |   `ff80808165afd2960165d1eb75424667`|
+| 300MB全国流量月包 |   `ff80808165afd2960165d1e93423464a`|
+| 500MB全国流量月包 |   `ff80808165afd2960165cdbf4a950c1c`|
+| 1GB全国流量月包 |   `ff80808165afd2960165cdbc92470bef`|
+
+##### appld值获取：
+`247b001385de5cc6ce11731ba1b15835313d489d604e58280e455a6c91e5058651acfb0f0b77029c2372659c319e02645b54c0acc367e692ab24a546b83c302d`为联通app抓包的appd值  <不保证这个appid能用，所以最好自己抓包，如果运行登录失败大概率就是appid不对或者失效>  
+以下获取appid方法由群友提供：安卓不会抓包的就去手机文件管理器，目录路径为 `Unicom/appid` ，打开复制就行了。  
+
+**填入参数举例**：  
+`membercenter niujieactive 号码1@密码1 号码2@密码2 号码3@密码3 appId@xxxx` 代表号码1、2和3进行正常签到  
+`membercenter niujieactive 号码1@密码1 号码2@密码2 号码3@密码3 appId@xxxx liulactive@d@xxxx` 代表号码1、2和3进行正常签到且每天为所有号码激活id值为xxxx的流量包  
+`membercenter niujieactive 号码1@密码1 号码2@密码2 号码3@密码3 appId@xxxx liulactive@w@xxxx@号码1-号码2` 代表号码1、2和3进行正常签到且每周一仅为号码1和2激活id值为xxxx的流量包  
+`号码1@密码1 号码2@密码2 号码3@密码3 appId@xxxx liulactive@m@xxxx` 代表每月2号为所有号码激活id值为xxxx的流量包，不进行签到活动  
+
+运行开始时间也可以自己修改`.github/workflows/签到.yml`文件中`- cron: 05 23 * * *`，你想运行的北京时间减8就行了。05代表5分，23代表23时，就是0时区23：05的意思。
+
+触发运行方式：  
+双击右上角自己仓库Star触发；  
+请随便找个文件(例如`README.md`)，加个空格提交一下，否则可能会出现无法定时执行的问题  
+由于规则更新,可能会Fork后会默认禁用,请手动点击Actions 选择项目 `enable workflows`激活  
+
+### 3.同步Fork后的代码
+
+#### 手动同步
+
+[手动同步 https://blog.blueskyclouds.com/jsfx/58.html](https://blog.blueskyclouds.com/jsfx/58.html)
+
+#### 自动同步
+
+##### 方案A - 强制远程分支覆盖自己的分支
+1. 参考[这里](https://github.com/BlueskyClouds/My-Actions/blob/master/backUp/gitSync.md)，安装[pull插件](https://github.com/apps/pull)，并确认此项目已在pull插件的作用下（参考文中1-d）。
+2. 确保.github/pull.yml文件正常存在，yml内上游作者填写正确(此项目已填好，无需更改)。
+3. 将pull.yml里面的`mergeMethod: merge`修改为`mergeMethod: hardreset`保存。
+4. ENJOY!上游更改三小时左右就会自动发起同步。
+
+##### 方案B - 保留自己分支的修改
+
+> 上游变动后pull插件会自动发起pr，但如果有冲突需要自行**手动**确认。
+> 如果上游更新涉及workflow里的文件内容改动，需要自行**手动**确认。
+
+1. 参考[这里](https://github.com/BlueskyClouds/My-Actions/blob/master/backUp/gitSync.md)，安装[pull插件](https://github.com/apps/pull)，并确认此项目已在pull插件的作用下（参考文中1-d）。
+2. 确保.github/pull.yml文件正常存在，yml内上游作者填写正确(此项目已填好，无需更改)。
+3. 确保pull.yml里面是`mergeMethod: merge`(默认就是merge)。
+4. ENJOY!上游更改三小时左右就会自动发起同步。
+
+### 4.Actions日志删除
+1. 在github保留太多日志不太好，首先可以去 `Settings` - `Actions` - `Artifact and log retention` 设置自己想要的保存天数。
+2. 在Actions界面手动运行Delete old workflow runs，输入Number of days和Number of runs的数字，运行完毕后即只保留你设置的天数和项目剩余数。
 
 
-
-## 免责声明: 
-
-* 本仓库发布的Script项目中涉及的任何解锁和解密分析脚本，仅用于测试和学习研究，不能保证其合法性，准确性，完整性和有效性，请根据情况自行判断.
-
-* Sunert对任何脚本问题概不负责，包括但不限于由任何脚本错误导致的任何损失或损害.
-
-* 间接使用脚本的任何用户，包括但不限于建立VPS或在某些行为违反国家/地区法律或相关法规的情况下进行传播, Sunert 对于由此引起的任何隐私泄漏或其他后果概不负责.
-
-* 请勿将Script项目的任何内容用于商业或非法目的，否则后果自负.
-
-* 如果任何单位或个人认为该项目的脚本可能涉嫌侵犯其权利，则应及时通知并提供身份证明，所有权证明，我们将在收到认证文件后删除相关脚本.
-
-* 任何以任何方式查看此项目的人或直接或间接使用该Script项目的任何脚本的使用者都应仔细阅读此声明。Sunert保留随时更改或补充此免责声明的权利。一旦使用并复制了任何相关脚本或Script项目的规则，则视为您已接受此免责声明.
-
-##### 您必须在下载后的24小时内从计算机或手机中完全删除以上内容.
-***您使用或者复制了本仓库且本人制作的任何脚本，则视为`已接受`此免责声明，请仔细阅读***
-
-####开发者不易,请赏杯茶水费
-<div align=center><img width="200" height="200" src="https://gitee.com/Sunert/ProxyConfig/raw/master/QuantumultX/Rules/Images/Complimentcode.jpeg"/></div>
-
-
-### 特别感谢：
-* [@NobyDa](https://github.com/NobyDa)
-
-* [@chavyleung](https://github.com/chavyleung)
-
-
+## 各版本使用教程  
+> [**CnUnicom.sh**](https://github.com/mixool/HiCnUnicom/blob/master/tutorial/CnUnicom_sh_readme.md)  
+> [**UnicomGetCoin.py**](https://github.com/mixool/HiCnUnicom/blob/master/tutorial/UnicomAutoGetCoin_py_readme.md)  
+  
