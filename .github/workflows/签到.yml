@@ -28,5 +28,3 @@ jobs:
         - name: 运行号码签到
           env:
            PARAMETER: ${{ secrets.PARAMETER }}
-          run: |
-           bash CnUnicom.sh $PARAMETER
