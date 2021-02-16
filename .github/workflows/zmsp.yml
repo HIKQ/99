@@ -25,10 +25,10 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【zmsp】'
-        if: env.ZM_HD
+      - name: '运行 【zhima】'
+        if: env.ZM_ZHIMABODY
         run: |
-          node Task/zmsp.js
+          node Task/zhima.js
         env:
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
