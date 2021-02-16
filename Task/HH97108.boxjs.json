@@ -2,7 +2,7 @@
 "id": "HH97108.app.sub",
 "name": "HH97108 脚本订阅",
 "author": "@HH97108",
-"icon": "",
+"icon": "https://raw.githubusercontent.com/HH97108/99/master/Task/HH97108.png",
 "repo": "https://github.com/HH97108",
 "apps": [{
 "id": "iboxpay",
