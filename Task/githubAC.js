@@ -11,7 +11,7 @@ diff --git a/Task/githubAC.js b/Task/githubAC.js
 index 716793c..86bd7bb 100644
 --- a/Task/githubAC.js
 +++ b/Task/githubAC.js
-@@ -11,8 +11,9 @@ boxjs链接  https://raw.githubusercontent.com/ziye12/JavaScript/main/Task/ziye.
+@@ -11,8 +11,9 @@ boxjs链接  https://raw.githubusercontent.com/HH97108/99/master/Task/HH97108.
  2.6 制作
  2.7 增加时间控制，多js换行，boxjs手动保存会话，填写，再应用，其他填写环境变量或者githubACCOOKIE.js
  2.7-2 修正判定
