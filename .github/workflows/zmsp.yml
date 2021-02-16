@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        ZM_zhimabody: ${{ secrets.ZM_zhimabody }}
+        ZM_HD: ${{ secrets.ZM_HD }}
+        ZM_BODY: ${{ secrets.ZM_BODY }}
         TZ: Asia/shanghai
     steps:
       - name: Checkout
@@ -25,9 +26,9 @@ jobs:
         run: |
           npm install
       - name: '运行 【zhima】'
-        if: env.ZM_zhimabody
+        if: env.ZM_HD
         run: |
-          node Task/zhima.js
+          node Task/zmsp.js
         env:
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
