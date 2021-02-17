@@ -6,7 +6,7 @@
 
 const $ = new Env('步步寶')
 let notice = ''
-let CookieVal = $.getdata('bbb_ck')
+let CookieVal = {"store":"appstore","tokenstr":"BD1BE8FDB65C7F34188593E55525200G1611907416","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","version":"11","idfa":"B96612BC-2C4B-40AE-A76E-E0A9C4D16256","User-Agent":"BBB/133 CFNetwork/1220.1 Darwin/20.3.0","platform":"2","imei":"070225F6-910D-4E54-BF21-EB5D80C0D54D","Cookie":"PHPSESSID=ed9gdlkvd1opdv8bgb4qbt3jp5","Host":"bububao.duoshoutuan.com","Accept-Language":"zh-cn","Accept":"*/*","Content-Length":"0"}
 
 if ($.isNode()) {
       console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
