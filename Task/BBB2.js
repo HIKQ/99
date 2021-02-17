@@ -75,7 +75,7 @@ function autoTx(){
 			{
 				url: 'https://bububao.duoshoutuan.com/user/tixian?',
 				headers: CookieVal,
-				body: `tx=0.3&`,
+				body: `tx=50&`,
 			}
 			$.post(userInfo,async(error, response, data) =>{
 				const txResult = JSON.parse(data)
