@@ -110,7 +110,7 @@ if (rotaryres.status == 0) {
       rotarynum = ` 转盘${rotaryres.msg}🎉`;
       break
    } else if(rotaryres.status == 1){
-     console.log("等待2s进行开始转盘任务")
+     console.log("等待40s进行开始转盘任务")
      rotaryscore += rotaryres.data.score
      rotarytimes = rotaryres.data.remainTurn
   }
