@@ -26,4 +26,4 @@ jobs:
       - name: '运行 【AAB】'
         run: |
           cd ~/99   
-          node Task/aaa.js
+          node Task/BBB.js
