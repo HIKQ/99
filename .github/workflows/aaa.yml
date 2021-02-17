@@ -1,27 +1,29 @@
-name: ABB
+name: AAB
 
 on:
-    workflow_dispatch:
-    schedule:
-        - cron: "0 0 29 2 *"
-    watch:
-        types: [started]
-
+  workflow_dispatch:
+  watch:
+    types: started
+  schedule:
+    - cron: '0 */6 * * *'
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        if: github.event.repository.owner.id == github.event.sender.id
-        steps:
-            - uses: actions/checkout@v1
-            - name: Use Node.js 10.x
-              uses: actions/setup-node@v1
-              with:
-                  node-version: 10.x
-            - name: npm install
-              run: |
-                  npm install
-            - name: "运行【ABB】"
-              run: |
-                  node Task/aaa.js
-              env:
-                 BBB_CK: ${{ secrets.BBB_CK }}
+  build:
+    runs-on: ubuntu-latest       
+    steps:
+      - name: Checkout
+        run: |
+          git clone https://github.com/HH97108/99.git ~/99
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: npm install
+        run: |
+          cd ~/99
+          npm install
+          npm install cron
+          npm install request
+      - name: '运行 【AAB】'
+        run: |
+          cd ~/99   
+          node Task/aaa.js
