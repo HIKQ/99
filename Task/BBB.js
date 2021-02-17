@@ -18,9 +18,7 @@ let notice = ''
 const now_time = new Date().getHours()
 var i = 0, num = 0;
 let CookieVal = [
-    `{"imei": "274aeb3d01b03a23","ini": "29","version": "18","tokenstr": "62F590DE0B4D2337EB632B57B526728G1634343849","store": "0","platform": "1","Content-Type": "application/x-www-form-urlencoded","User-Agent": "Dalvik/2.1.0 (Linux; U; Android 10; MI 8 MIUI/20.9.4)","Host": "bububao.duoshoutuan.com","Connection": "Keep-Alive","Accept-Encoding": "gzip","Cookie": "PHPSESSID=p2ejpje2sism9g6jlldmtj5436","Content-Length": "0"}`,
-    `{"imei": "862052037929145","ini": "22","version": "18","tokenstr": "50E7E8917A6E043BAEF9B4C62527857G1634348461","store": "0","platform": "1","User-Agent": "Dalvik/2.1.0 (Linux; U; Android 5.1; HUAWEI TAG-AL00 Build/HUAWEITAG-AL00)","Host": "bububao.duoshoutuan.com","Connection": "Keep-Alive","Accept-Encoding": "gzip","Content-Type": "application/x-www-form-urlencoded","Cookie": "PHPSESSID=6r6mp57r75eb2v2tbdeahsj8c0","Content-Length": "0"}`,
-]
+    {"store":"appstore","tokenstr":"BD1BE8FDB65C7F34188593E55525200G1611907416","Connection":"keep-alive","Accept-Encoding":"gzip, deflate, br","version":"11","idfa":"B96612BC-2C4B-40AE-A76E-E0A9C4D16256","User-Agent":"BBB/133 CFNetwork/1220.1 Darwin/20.3.0","platform":"2","imei":"070225F6-910D-4E54-BF21-EB5D80C0D54D","Cookie":"PHPSESSID=ed9gdlkvd1opdv8bgb4qbt3jp5","Host":"bububao.duoshoutuan.com","Accept-Language":"zh-cn","Accept":"*/*","Content-Length":"0"}]
 
 if ($.isNode()) {
     console.log(`============ 脚本执行-国际标准时间(UTC)：${new Date().toLocaleString()}  =============\n`)
@@ -50,7 +48,7 @@ now = new Date(new Date().getTime() + new Date().getTimezoneOffset() * 60 * 1000
         if (now_time == 10) {
             await checkH5Id()        // 看看賺,一天一次
         }
-        await showmsg()         // 推送消息
+        await showmsg(21)         // 推送消息
     }
 })()
     .catch((e) => $.logErr(e))
