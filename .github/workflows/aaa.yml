@@ -22,6 +22,6 @@ jobs:
                   npm install
             - name: "运行【ABB】"
               run: |
-                  node Task/AAA2.js
+                  node Task/aaa.js
               env:
                  BBB_CK: ${{ secrets.BBB_CK }}
