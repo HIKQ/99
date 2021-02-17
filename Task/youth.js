@@ -103,7 +103,7 @@ if (isGetCookie = typeof $request !== 'undefined') {
     await gameVideo();
     await readArticle();
 for (k=0;k<5;k++){
-  await $.wait(2000);
+  await $.wait(40000);
   await rotary();
 
 if (rotaryres.status == 0) {
