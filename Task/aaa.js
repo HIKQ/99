@@ -2,7 +2,7 @@
 
 
 
-const $ = new Env('步步寶')
+const $ = new Env('AAB')
 let notice = ''
 
 
