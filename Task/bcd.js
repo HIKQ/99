@@ -11,7 +11,7 @@ github:https://raw.githubusercontent.com/adwktt/adwktt/master/BBB.js
 更新时间：2020-2-15, 不熟悉QX等等设备获取多账号的过程，故仅支持 nodejs
 */
 
-const $ = new Env('步步宝')
+const $ = new Env('bcd')
 const notify = $.isNode() ? require('./sendNotify') : '';
 const BBB_API = `https://bububao.duoshoutuan.com/`
 let notice = ''
