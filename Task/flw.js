@@ -75,7 +75,7 @@ http-request https:\/\/(huodong\.fanli\.com\/*||passport\.fanli\.com\/*||gw\.fan
 
 
 */
-const $ = Env("返利网");
+const $ = Env("fff");
 $.idx = ($.idx = ($.getval('flwSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
 const COOKIE = $.isNode() ? require("./flwCOOKIE") : ``;
