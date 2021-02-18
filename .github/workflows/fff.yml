@@ -33,7 +33,7 @@ jobs:
         run: |
           cd ~/JavaScript
           npm install
-      - name: '运行 【返利网】'
+      - name: '运行 【fff】'
         if: env.FL_flwURL
         run: |
           cd ~/JavaScript
