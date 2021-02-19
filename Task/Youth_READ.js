@@ -32,17 +32,6 @@ if(!$.isNode()&&!YouthBody==true){
       console.log(`您选择的是用换行隔开\n`)
     } else {
       YouthBody = [process.env.YOUTH_READ]
-
-    if (process.env.YOUTH_READ2 && process.env.YOUTH_READ2.indexOf('&') > -1) {
-      YouthBody = process.env.YOUTH_READ2.split('&');
-      console.log(`您选择的是用"&"隔开\n`)
-    } else if (process.env.YOUTH_READ2 && process.env.YOUTH_READ2.indexOf('\n') > -1) {
-      YouthBody = process.env.YOUTH_READ2.split('\n');
-      console.log(`您选择的是用换行隔开\n`)
-    } else {
-      YouthBody = [process.env.YOUTH_READ2]
-
-
     }
     console.log(` ============ 脚本执行 - 北京时间 (UTC + 8)：${new Date(Date.now() + 8 * 60 * 60 * 1000).toLocaleString()} =============\n`)
 
