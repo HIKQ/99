@@ -31,7 +31,7 @@ if(!$.isNode()&&!YouthBody==true){
       YouthBody = process.env.YOUTH_READ.split('\n');
       console.log(`您选择的是用换行隔开\n`)
     } else {
-      YouthBody = [process.env.YOUTH_READ]
+      YouthBody = [process.env.YOUTH_READ,process.env.YOUTH_READ2,process.env.YOUTH_READ3]
     }
     console.log(` ============ 脚本执行 - 北京时间 (UTC + 8)：${new Date(Date.now() + 8 * 60 * 60 * 1000).toLocaleString()} =============\n`)
 
