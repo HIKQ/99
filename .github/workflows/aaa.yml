@@ -1,4 +1,4 @@
-name: AAB
+name: 步步宝
 
 on:
   workflow_dispatch:
