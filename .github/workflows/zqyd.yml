@@ -47,7 +47,7 @@ jobs:
           node Task/Youth_Read.js
         env:
           YOUTH_READ: ${{ secrets.YOUTH_READ2 }}
-
+          YOUTH_TIME: ${{ secrets.YOUTH_TIME }}
           
       - name: '运行 【中青看点自动阅读三】'
         if: env.YOUTH_READ3
@@ -55,7 +55,7 @@ jobs:
           node Task/Youth_Read.js
         env:
           YOUTH_READ: ${{ secrets.YOUTH_READ3 }}
-
+          YOUTH_TIME: ${{ secrets.YOUTH_TIME }}
           
       - name: '运行 【中青看点自动阅读四】'
         if: env.YOUTH_READ4
@@ -63,20 +63,22 @@ jobs:
           node Task/Youth_Read.js
         env:
           YOUTH_READ: ${{ secrets.YOUTH_READ4 }}
- 
+          YOUTH_TIME: ${{ secrets.YOUTH_TIME }}
+
       - name: '运行 【中青看点自动阅读五】'
         if: env.YOUTH_READ5
         run: |
           node Task/Youth_Read.js
         env:
           YOUTH_READ: ${{ secrets.YOUTH_READ5 }}
-
+          YOUTH_TIME: ${{ secrets.YOUTH_TIME }}
       - name: '运行 【中青看点自动阅读六】'
         if: env.YOUTH_READ6
         run: |
           node Task/Youth_Read.js
         env:
           YOUTH_READ: ${{ secrets.YOUTH_READ6 }}
+          YOUTH_TIME: ${{ secrets.YOUTH_TIME }}
 
       - name: '运行 【中青看点自动阅读七】'
         if: env.YOUTH_READ7
@@ -84,14 +86,15 @@ jobs:
           node Task/Youth_Read.js
         env:
           YOUTH_READ: ${{ secrets.YOUTH_READ7 }}
-    
+          YOUTH_TIME: ${{ secrets.YOUTH_TIME }}
+
       - name: '运行 【中青看点自动阅读八】'
         if: env.YOUTH_READ8
         run: |
           node Task/Youth_Read.js
         env:
           YOUTH_READ: ${{ secrets.YOUTH_READ8 }}
-      
+          YOUTH_TIME: ${{ secrets.YOUTH_TIME }}
 
       - name: '运行 【中青看点自动阅读九】'
         if: env.YOUTH_READ9
@@ -99,7 +102,7 @@ jobs:
           node Task/Youth_Read.js
         env:
           YOUTH_READ: ${{ secrets.YOUTH_READ9 }}
-         
+          YOUTH_TIME: ${{ secrets.YOUTH_TIME }}
 
       - name: '运行 【中青看点自动阅读十】'
         if: env.YOUTH_READ10
@@ -107,3 +110,4 @@ jobs:
           node Task/Youth_Read.js
         env:
           YOUTH_READ: ${{ secrets.YOUTH_READ10 }}
+          YOUTH_TIME: ${{ secrets.YOUTH_TIME }}
