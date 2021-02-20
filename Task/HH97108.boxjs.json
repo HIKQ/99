@@ -129,8 +129,8 @@
       ],
       "name" : "中青看点",
       "icons" : [
-        "https://raw.githubusercontent.com/Orz-3/mini/master/youth.png",
-        "https://raw.githubusercontent.com/Orz-3/task/master/youth.png"
+        "https://raw.githubusercontent.com/HH97108/99/master/Task/youth.png",
+        "https://raw.githubusercontent.com/HH97108/99/master/Task/youth.png"
       ]
     },
     {
@@ -166,7 +166,7 @@
         ]
       }],
       "repo": "https://github.com/HH97108/99/master/Task/youth_banner.js",
-      "icons": ["https://raw.githubusercontent.com/Orz-3/mini/master/youth.png", "https://raw.githubusercontent.com/Orz-3/task/master/youth.png"],
+      "icons": ["https://raw.githubusercontent.com/HH97108/99/master/Task/youth.png", "https://raw.githubusercontent.com/HH97108/99/master/Task/youth.png"],
       "script": "https://raw.githubusercontent.com/HH97108/99/master/Task/youth_banner.js"
     },
  		{
@@ -224,8 +224,8 @@
 			"author": "@HH97108",
 			"repo": "https://github.com/HH97108/99/master/Task/youth_READ.js",
 			"icons": [
-				"https://raw.githubusercontent.com/Orz-3/mini/master/youth.png",
-				"https://raw.githubusercontent.com/Orz-3/task/master/youth.png"
+				"https://raw.githubusercontent.com/HH97108/99/master/Task/youth.png",
+				"https://raw.githubusercontent.com/HH97108/99/master/Task/youth.png"
 			]
 		},
     {
@@ -239,8 +239,8 @@
       "script" : "https://raw.githubusercontent.com/HH97108/99/master/Task/Youth_Read.js",
       "name" : "中青自动阅读2",
       "icons" : [
-        "https://raw.githubusercontent.com/Orz-3/mini/master/youth.png",
-        "https://raw.githubusercontent.com/Orz-3/mini/master/Color/youth.png"
+        "https://raw.githubusercontent.com/HH97108/99/master/Task/youth.png",
+        "https://raw.githubusercontent.com/HH97108/99/master/Task/youth.png"
       ]
     },
  {
