@@ -328,7 +328,6 @@
 "icons": ["https://raw.githubusercontent.com/HH97108/99/master/Task/zhima.png", "https://raw.githubusercontent.com/HH97108/99/master/Task/zhima.png"],
 "script": "https://raw.githubusercontent.com/HH97108/99/master/Task/zhima.js"
 },
-
         {
             "id": "flw",
             "name": "返利网",
@@ -362,7 +361,6 @@
                     "type": "number",
                     "desc": "默认0，可设置设置 0 5 50 100"
                 }
-
 ],
 "repo": "https://raw.githubusercontent.com/HH97108/99/master/Task/flw.js",
 "icons": ["https://raw.githubusercontent.com/HH97108/99/master/Task/flw.png", "https://raw.githubusercontent.com/HH97108/99/master/Task/flw.png"],
