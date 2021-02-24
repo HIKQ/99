@@ -19,7 +19,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 const baiducks = $.getdata(`chavy_cookie_tieba`) || $.getdata(`CookieTB`);
 let baiducash = $.getdata(`cash_baidu`);
 
-let taskON = $.getdata(`task_baidu`)||"true"//除提现和兑换外其他任务开关;
+let taskON = $.getdata(`task_baidu`)||"false"//除提现和兑换外其他任务开关;
 let isblack = "false";
 let UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 14_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 SP-engine/2.24.0 matrixstyle/0 info baiduboxapp/5.1.6.10 (Baidu; P2 14.2)'
 
