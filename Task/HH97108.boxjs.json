@@ -306,6 +306,38 @@
             "icons": ["https://s3.ax1x.com/2021/02/06/yYzYWR.png", "https://s3.ax1x.com/2021/02/06/yYzYWR.png"],
             "script": "https://raw.githubusercontent.com/HH97108/99/master/Task/ymz.js"
     },
+{
+            "id": "bububao",
+            "name": "步步宝APP",
+            "keys": ["bububaotoken", "bububaotoken2", "bububaotoken3", "bububaotoken4", "bububaotoken5", "bububaotoken6", "bububaotoken7", "bububaotoken8", "bububaotoken9", "bububaotoken10", "bububaotoken11", "bububaotoken12", "bububaotoken13", "bububaotoken14", "bububaotoken15", "bububaotoken16", "bububaotoken17", "bububaotoken18", "bububaotoken19", "bububaotoken20"],
+            "author": "@HH97108",
+            "settings": [{
+                    "id": "bububaoSuffix",
+                    "name": "当前账号",
+                    "val": "1",
+                    "type": "number",
+                    "desc": "当前抓取ck记录的账号序号，如：1、2、3、"
+                },
+                {
+                    "id": "bububaoCount",
+                    "name": "账号个数",
+                    "val": "1",
+                    "type": "number",
+                    "desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
+                },
+                {
+                    "id": "bububaoCASH",
+                    "name": "提现标准",
+                    "val": "0",
+                    "type": "number",
+                    "desc": "0不提现，可设置 0 0.3 50 100 200 888  设置888由上至下循环提现 "
+                }
+            ],
+            "repo": "https://raw.githubusercontent.com/HH97108/99/master/Task/bububao.js",
+            "icons": ["https://raw.githubusercontent.com/ziye66666/JavaScript/main/bububao.png", "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/bububao.png"],
+            "script": "https://raw.githubusercontent.com/HH97108/99/master/Task/bububao.js"
+        },
+
 	{
             "id": "fqkk",
             "name": "番茄看看",
