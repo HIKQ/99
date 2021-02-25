@@ -268,21 +268,30 @@
 				"https://raw.githubusercontent.com/HH97108/99/master/Task/youth.png"
 			]
 		},
-    {
-      "author" : "@HH97108",
-      "keys" : [
-        "youth_autoread",
+     {
+      "author": "@HH97108", 
+      "keys": [
+        "youth_autoread", 
         "autotime_zq"
+      ], 
+      "settings": [
+      {
+          "id": "youth_cut", 
+          "val": false, 
+          "name": "缩减请求", 
+          "type": "boolean", 
+          "desc": "自动删除收益为0或者错误的阅读请求，使用完后请立即关闭，避免清空阅读请求"
+        }
       ],
-      "repo" : "https://github.com/Sunert/HH97108/99/master/Task/Youth_Read.js",
-      "id" : "youthRead",
-      "script" : "https://raw.githubusercontent.com/HH97108/99/master/Task/Youth_Read.js",
-      "name" : "中青自动阅读2",
-      "icons" : [
-        "https://raw.githubusercontent.com/HH97108/99/master/Task/youth.png",
+      "repo": "https://github.com/HH97108/99/master/Task/Youth_Read.js", 
+      "id": "youthRead", 
+      "script": "https://raw.githubusercontent.com/HH97108/99/master/Task/Youth_Read.js", 
+      "name": "中青自动阅读2", 
+      "icons": [
+        "https://raw.githubusercontent.com/HH97108/99/master/Task/youth.png", 
         "https://raw.githubusercontent.com/HH97108/99/master/Task/youth.png"
       ]
-    },
+    }, 
 		{
             "id":"sqxh",
             "name":"书旗小说",
