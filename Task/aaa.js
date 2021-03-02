@@ -57,7 +57,7 @@ http-response https:\/\/bububao\.duoshoutuan\.com\/user\/* script-path=https://r
 步步宝获取TOKEN = type=http-response,pattern=https:\/\/bububao\.duoshoutuan\.com\/user\/*,script-path=https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/bububao.js
 */
 
-const $ = Env("步步宝");
+const $ = Env("aaa");
 $.idx = ($.idx = ($.getval('bububaoSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
 const COOKIE = $.isNode() ? require("./bububaoCOOKIE") : ``;
