@@ -439,22 +439,9 @@
                 }
             ],
             "repo": "https://raw.githubusercontent.com/HH97108/99/master/Task/bububao.js",
-            "icons": ["https://raw.githubusercontent.com/ziye66666/JavaScript/main/bububao.png", "https://raw.githubusercontent.com/ziye66666/JavaScript/main/Task/bububao.png"],
+            "icons": ["https://raw.githubusercontent.com/HH97108/99/master/Task/bububao.png", "https://raw.githubusercontent.com/HH97108/99/master/Task/bububao.png"],
             "script": "https://raw.githubusercontent.com/HH97108/99/master/Task/bububao.js"
         },
-
-	{
-            "id": "fqkk",
-            "name": "番茄看看",
-            "keys": ["fqkkurl", "fqkkhd","fqkkurl2","fqkkhd2","fqkkurl3","fqkkhd3","fqkkurl4","fqkkhd4","fqkkurl5", "fqkkhd5","fqkkurl6","fqkkhd6","fqkkurl7","fqkkhd7","fqkkurl8","fqkkhd8","fqkkurl9", "fqkkhd9","fqkkurl10","fqkkhd10","fqkkurl11","fqkkhd11","fqkkurl12","fqkkhd12","fqkkurl13", "fqkkhd13","fqkkurl14","fqkkhd14","fqkkurl15", "fqkkhd15"],
-            "author": "@HH97108",
-            "settings": [{
-            "id": "fqkkstatus",
-            "name": "当前账号",
-            "val": "1",
-            "type": "number",
-            "desc": "当前账号对应"
-    },
     {
             "id": "fqkkcount",
             "name": "账号个数",
