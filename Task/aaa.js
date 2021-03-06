@@ -70,7 +70,7 @@ $.message = '', COOKIES_SPLIT = '', CASH = '', ddtime = '';
 CZ = 10
 const bububaotokenArr = [];
 let bububaotokenVal = ``;
-let middlebububaoTOKEN = [DA4C4481B5725A632297DB094525200G1614870427];
+let middlebububaoTOKEN = [];
 if ($.isNode()) {
     // 没有设置 FL_DHCASH 则默认为 0 不兑换
     CASH = process.env.BBB_CASH || 0;
