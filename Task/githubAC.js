@@ -1,8 +1,8 @@
 /* ziye 
-github地址 https://github.com/ziye11
+github地址 https://github.com/6Svip120apk69
 TG频道地址  https://t.me/ziyescript
 TG交流群   https://t.me/joinchat/AAAAAE7XHm-q1-7Np-tF3g
-boxjs链接  https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/ziye.boxjs.json
+boxjs链接  https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/ziye.boxjs.json
 转载请备注个名字，谢谢
 
 ⚠️github运行AC任务
@@ -13,6 +13,8 @@ boxjs链接  https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/ziye.
 2.7-2 修正判定
 2.7-3 时间精确到5分
 1.12 修复
+3.8 替换为循环获取ck
+3.15 增加即时触发功能，可让js随githubAC运行而即时启动
 
 ⚠️一共1个位置 3个ck  👉 18条 Secrets(14个时间变量) 
 多账号换行
@@ -49,6 +51,8 @@ MMM 👉GIT_MMM
 MMN 👉GIT_MMN
 
 
+XXX👉 GIT_XXX  //可设置0 不启动、js序号数 指定哪个js任务随githubAC运行而启动、 888 全部js启动
+
 ⚠️主机名以及重写👇
 
 
@@ -59,16 +63,16 @@ hostname=github.com,
 ############## 圈x
 
 #githubAC获取body
-https:\/\/github\.com\/* url script-request-body https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/githubAC.js   
+https:\/\/github\.com\/* url script-request-body https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/githubAC.js   
 
 ############## loon
 #githubAC获取body
-http-request https:\/\/github\.com\/* script-path=https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/githubAC.js,requires-body=true, tag=githubAC获取body
+http-request https:\/\/github\.com\/* script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/githubAC.js,requires-body=true, tag=githubAC获取body
 
 ############## surge
 
 #githubAC获取body
-githubACbody = type=http-request,pattern=https:\/\/github\.com\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/ziye11/JavaScript/main/Task/githubAC.js 
+githubACbody = type=http-request,pattern=https:\/\/github\.com\/*,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/6Svip120apk69/gitee_q8qsTAUA_cThxc1RBVUE/main/Task/githubAC.js 
 
 
 
@@ -85,6 +89,9 @@ const logs = 0; // 0为关闭日志，1为开启
 const notifyttt = 1 // 0为关闭外部推送，1为12 23 点外部推送
 const notifyInterval = 2; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知 
 $.message = '', COOKIES_SPLIT = '', ddtime = '';
+
+
+
 const githubACnameArr = [];
 let githubACnameVal = ``;
 let middlegithubACNAME = [];
@@ -187,7 +194,10 @@ let middleMML = [];
 
 
 
-
+if ($.isNode()) {
+    // 没有设置 GIT_XXX 则默认为 0 不即时触发
+    XXX = process.env.GIT_XXX || 0;
+}
 
 
 
@@ -732,6 +742,9 @@ if (!COOKIE.githubACheaderVal) {
         MMKArr.push($.getdata("MMK"));
         MMLArr.push($.getdata("MML"));
         // 根据boxjs中设置的额外账号数，添加存在的账号数据进行任务处理
+        if ("githubACXXX") {
+            XXX = $.getval("githubACXXX") || '0';
+        }
 
         let githubACCount = ($.getval('githubACCount') || '1') - 0;
         for (let i = 2; i <= githubACCount; i++) {
@@ -777,47 +790,63 @@ if (!COOKIE.githubACheaderVal) {
 
 
 function GetCookie() {
-    if ($request && $request.url.indexOf("actions") >= 0 && $request.url.indexOf("manual") >= 0) {
-
-
-
+    if ($request && $request.url.indexOf("actions") >= 0 && $request.url.indexOf("manual") >= 0 && $request.body.indexOf("authenticity_token=") >= 0 && $request.body.indexOf("workflow=") >= 0 && $request.body.indexOf("branch=") >= 0) {
 
         const githubACurlVal = $request.url
-        $.setdata(githubACurlVal, "githubACurl" + $.idx);
-        $.log(
-            `[${$.name + $.idx}] 获取githubACurl✅: 成功,githubACurlVal: ${githubACurlVal}`
-        );
-        $.msg($.name + $.idx, `获取githubACurl: 成功🎉`, ``);
-
-
-
         const githubACheaderVal = JSON.stringify($request.headers);
-        if (githubACheaderVal) {
-            $.setdata(githubACheaderVal, "githubACheader" + $.idx);
-            $.log(
-                `[${$.name + $.idx}] 获取githubACheaderVal✅: 成功,githubACheaderVal: ${githubACheaderVal}`
-            );
-            $.msg($.name + $.idx, `获取githubACheaderVal: 成功🎉`, ``);
+        const githubACnameVal = decodeURIComponent($request.headers.Referer).split('workflow:')[1];
+        const githubACbodyVal = $request.body;
 
+        if (githubACurlVal) {
+            cookie()
 
-            const githubACnameVal = decodeURIComponent($request.headers.Referer).split('workflow:')[1];
+            function cookie() {
+                bodys = $.getdata('githubACurl' + $.idx);
+                if (bodys) {
+                    if (bodys.indexOf(githubACurlVal) >= 0) {
+                        $.log(
+                            `[${$.name + $.idx}] githubACurlVal已存在✅: githubACurlVal: ${githubACurlVal}`
+                        );
+                        $.msg($.name + $.idx, `githubACurlVal已存在: 🎉`, ``);
+                        $.done();
+                    } else if ($.idx == '') {
+                        $.idx = 2
+                        cookie()
+                    } else {
+                        $.idx = $.idx + 1
+                        cookie()
+                    }
+                } else {
+                    {
+                        $.setdata(githubACurlVal, "githubACurl" + $.idx);
+                        $.setdata(githubACheaderVal, "githubACheader" + $.idx);
+                        $.setdata(githubACnameVal, "githubACname" + $.idx);
+                        $.setdata(githubACbodyVal, "githubACbody" + $.idx);
+                        $.log(
+                            `[${$.name + $.idx}] 获取githubACurlVal✅: 成功,githubACurlVal: ${githubACurlVal}`
+                        );
+                        $.msg($.name + $.idx, `获取githubACurlVal: 成功🎉`, ``);
+                        $.log(
+                            `[${$.name + $.idx}] 获取githubACheaderVal✅: 成功,githubACheaderVal: ${githubACheaderVal}`
+                        );
+                        $.msg($.name + $.idx, `获取githubACheaderVal: 成功🎉`, ``);
 
-            $.setdata(githubACnameVal, "githubACname" + $.idx);
-            $.log(
-                `[${$.name + $.idx}] 获取githubACname✅: 成功,githubACnameVal: ${githubACnameVal}`
-            );
-            $.msg($.name + $.idx, `获取githubACname: 成功🎉`, ``);
+                        $.log(
+                            `[${$.name + $.idx}] 获取githubACnameVal✅: 成功,githubACnameVal: ${githubACnameVal}`
+                        );
+                        $.msg($.name + $.idx, `获取githubACnameVal: 成功🎉`, ``);
+                        $.log(
+                            `[${$.name + $.idx}] 获取githubACbodyVal✅: 成功,githubACbodyVal: ${githubACbodyVal}`
+                        );
+                        $.msg($.name + $.idx, `获取githubACbodyVal: 成功🎉`, ``);
+
+                        $.done();
+                    }
+                };
+
+            }
 
         }
-        const githubACbodyVal = $request.body;
-        if (githubACbodyVal) $.setdata(githubACbodyVal, "githubACbody" + $.idx);
-        $.log(
-            `[${$.name + $.idx}] 获取githubACbodyVal✅: 成功,githubACbodyVal: ${githubACbodyVal}`
-        );
-        $.msg($.name + $.idx, `获取githubACbodyVal: 成功🎉`, ``);
-
-
-
 
     }
 
@@ -833,7 +862,6 @@ console.log(
     `============ 共 ${Length} 个${$.name}账号=============\n`
 );
 
-
 //时间
 nowTimes = new Date(
     new Date().getTime() +
@@ -843,10 +871,10 @@ nowTimes = new Date(
 //今天
 Y = nowTimes.getFullYear() + '-';
 M = (nowTimes.getMonth() + 1 < 10 ? '0' + (nowTimes.getMonth() + 1) : nowTimes.getMonth() + 1) + '-';
-D = (nowTimes.getDate() + 1 < 10 ? '0' + (nowTimes.getDate()) : nowTimes.getMonth());
+D = (nowTimes.getDate() < 10 ? '0' + (nowTimes.getDate()) : nowTimes.getDate());
 ddtime = Y + M + D;
 console.log(ddtime)
-
+//当前时间戳
 function tts(inputTime) {
     if ($.isNode()) {
         TTS = Math.round(new Date().getTime() +
@@ -855,9 +883,6 @@ function tts(inputTime) {
         new Date().getTimezoneOffset() * 60 * 1000 + 8 * 60 * 60 * 1000).toString();
     return TTS;
 };
-
-
-
 //当前10位时间戳
 function ts(inputTime) {
     if ($.isNode()) {
@@ -878,12 +903,9 @@ function daytime(inputTime) {
 };
 //时间戳格式化日期
 function time(inputTime) {
-
     if ($.isNode()) {
         var date = new Date(inputTime + 8 * 60 * 60 * 1000);
     } else var date = new Date(inputTime);
-
-
     Y = date.getFullYear() + '-';
     M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-';
     D = date.getDate() + ' ';
@@ -892,6 +914,46 @@ function time(inputTime) {
     s = date.getSeconds();
     return Y + M + D + h + m + s;
 };
+//日期格式化时间戳
+function timecs() {
+    if ($.isNode()) {
+        var date = new Date(newtime).getTime() - 8 * 60 * 60 * 1000
+    } else var date = new Date(newtime).getTime()
+    return date;
+};
+//随机udid 大写
+function udid() {
+    var s = [];
+    var hexDigits = "0123456789ABCDEF";
+    for (var i = 0; i < 36; i++) {
+        s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1);
+    }
+    s[14] = "4"; // bits 12-15 of the time_hi_and_version field to 0010
+    s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1); // bits 6-7 of the clock_seq_hi_and_reserved to 01
+    s[8] = s[13] = s[18] = s[23] = "-";
+    var uuid = s.join("");
+    return uuid;
+}
+//随机udid 小写
+function udid2() {
+    function S4() {
+        return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+    }
+    return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
+}
+//编码
+function encodeUnicode(str) {
+    var res = [];
+    for (var i = 0; i < str.length; i++) {
+        res[i] = ("00" + str.charCodeAt(i).toString(16)).slice(-4);
+    }
+    return "\\u" + res.join("\\u");
+}
+//解码
+function decodeUnicode(str) {
+    str = str.replace(/\\/g, "%");
+    return unescape(str);
+}
 let isGetCookie = typeof $request !== 'undefined'
 if (isGetCookie) {
     GetCookie()
@@ -964,7 +1026,7 @@ async function all() {
             githubACurlVal = githubACurlArr[i];
             githubACheaderVal = githubACheaderArr[i];
             githubACbodyVal = githubACbodyArr[i];
-			
+
             HHAVal = HHAArr[i];
             HHBVal = HHBArr[i];
             HHCVal = HHCArr[i];
@@ -1000,9 +1062,21 @@ async function all() {
         await console.log(`-------------------------\n\n🔔开始运行${$.name+(i+1)}【${githubACnameVal}】`)
 
         $.message += `【${githubACnameVal}】${HHAVal}-${HHBVal} ${HHCVal}-${HHDVal} ${HHEVal}-${HHFVal} ${HHGVal}-${HHHVal} ${HHIVal}-${HHJVal} ${HHKVal}-${HHLVal} 的 ${MMAVal} ${MMBVal} ${MMCVal} ${MMDVal} ${MMEVal} ${MMFVal} ${MMGVal} ${MMHVal} ${MMIVal} ${MMJVal} ${MMKVal} ${MMLVal} 分运行\n`
-        
+
         if (((nowTimes.getHours() >= HHAVal && nowTimes.getHours() <= HHBVal) || (nowTimes.getHours() >= HHCVal && nowTimes.getHours() <= HHDVal) || (nowTimes.getHours() >= HHEVal && nowTimes.getHours() <= HHFVal) || (nowTimes.getHours() >= HHGVal && nowTimes.getHours() <= HHHVal) || (nowTimes.getHours() >= HHIVal && nowTimes.getHours() <= HHJVal) || (nowTimes.getHours() >= HHKVal && nowTimes.getHours() <= HHLVal)) && (nowTimes.getMinutes() == MMAVal || nowTimes.getMinutes() == MMBVal || nowTimes.getMinutes() == MMCVal || nowTimes.getMinutes() == MMDVal || nowTimes.getMinutes() == MMEVal || nowTimes.getMinutes() == MMFVal || nowTimes.getMinutes() == MMGVal || nowTimes.getMinutes() == MMHVal || nowTimes.getMinutes() == MMIVal || nowTimes.getMinutes() == MMJVal || nowTimes.getMinutes() == MMKVal || nowTimes.getMinutes() == MMLVal)) {
 
+            await githubAC(); //运行
+
+        } else if (i + 1 == XXX || XXX == 888) {
+            if (XXX == 888) {
+                console.log(`即时触发已开启，您选择的是【全部启动】\n`)
+                $.message += `即时触发已开启，您选择的是【全部启动】\n`
+
+            } else {
+                console.log(`即时触发已开启，您选择的是【${XXX}号JS启动】\n`)
+                $.message += `即时触发已开启，您选择的是【${XXX}号JS启动】\n`
+
+            }
             await githubAC(); //运行
 
         } else {
@@ -1051,6 +1125,7 @@ function githubAC(timeout = 0) {
                 try {
                     if (logs) $.log(`${O}, 运行🚩: ${data}`);
                     if (data.match(/github.com/g)) {
+
                         console.log(githubACnameVal + `${time(Number(tts()))}运行成功\n\n`)
                         $.message += githubACnameVal + `${time(Number(tts()))}运行成功\n\n`
                     } else {
