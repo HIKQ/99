@@ -420,29 +420,6 @@
             "script":"https://raw.githubusercontent.com/HH97108/99/master/Task/sqxs.js"
         },
     {
-            "id": "ymz",
-            "name": "羊毛赚",
-            "keys": ["ymzurl","ymzhd","ymzbody","ymzbody1"],
-            "author": "@HH97108",
-            "settings": [{
-            "id": "ymzdsetting",
-            "name": "当前账号",
-            "val": "1",
-            "type": "number",
-            "desc": "当前账号对应"
-    },
-    {
-            "id": "ymzdcount",
-            "name": "账号个数",
-            "val": "1",
-            "type": "number",
-            "desc": "需要几个账号，数字为几"
-    }],
-            "repo": "https://raw.githubusercontent.com/HH97108/99/master/Task/ymz.js",
-            "icons": ["https://s3.ax1x.com/2021/02/06/yYzYWR.png", "https://s3.ax1x.com/2021/02/06/yYzYWR.png"],
-            "script": "https://raw.githubusercontent.com/HH97108/99/master/Task/ymz.js"
-    },
-    {
       "id": "bububao",
       "name": "步步宝APP",
       "keys": [
@@ -495,37 +472,6 @@
             "icons": ["https://raw.githubusercontent.com/HH97108/99/master/Task/bububao.png", "https://raw.githubusercontent.com/HH97108/99/master/Task/bububao.png"],
             "script": "https://raw.githubusercontent.com/HH97108/99/master/Task/bububao.js"
         },
-{
-"id": "zhima",
-"name": "芝嫲视频",
-"keys": ["zhimabody", "zhimabody2", "zhimabody3", "zhimabody4", "zhimabody5", "zhimabody6", "zhimabody7", "zhimabody8", "zhimabody9", "zhimabody10", "zhimabody11", "zhimabody12", "zhimabody13", "zhimabody14", "zhimabody15", "zhimabody16", "zhimabody17", "zhimabody18", "zhimabody19", "zhimabody20"],
-"author": "@HH97108",
-"settings": [{
-"id": "zhimaSuffix",
-"name": "当前账号",
-"val": "1",
-"type": "number",
-"desc": "当前抓取ck记录的账号序号，如：1、2、3、"
-},
-{
-"id": "zhimaCount",
-"name": "账号个数",
-"val": "1",
-"type": "number",
-"desc": "指定任务最多跑几个账号，根据抓取的账号数据个数来设值"
-},
-{
-"id": "zhimaCASH",
-"name": "提现标准",
-"val": "0",
-"type": "number",
-"desc": "0不提现，可设置 0 0.3 0.5 1 5 10 30 50 100 等"
-}
-],
-"repo": "https://raw.githubusercontent.com/HH97108/99/master/Task/zhima.js",
-"icons": ["https://raw.githubusercontent.com/HH97108/99/master/Task/zhima.png", "https://raw.githubusercontent.com/HH97108/99/master/Task/zhima.png"],
-"script": "https://raw.githubusercontent.com/HH97108/99/master/Task/zhima.js"
-},
         {
             "id": "flw",
             "name": "返利网",
