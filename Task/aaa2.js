@@ -353,25 +353,25 @@ async function all() {
             }
             //await userjinbi() //收益记录
             if (CZ >= 10) {
-                await help_index() //助力活动
-                await home() //首页信息
-                await jindan_click() //首页金蛋
-                await sign_html() //签到
-                await dk_info() //打卡
-                await cy_info() //答题
-                await water_info() //喝水
-                await sleep_info() //睡觉
-                await ggk() //刮刮卡
-                await $.wait(8000)
-                await lucky() //转盘抽奖
-                await $.wait(1000)
-                await lucky() //转盘抽奖
-                await $.wait(1000)
-                await lucky() //转盘抽奖
-                await $.wait(1000)
-                await h5_list() //看看赚
-                await news() //看文章
-                await renwu() //赚赚任务
+                //await help_index() //助力活动
+                //await home() //首页信息
+                //await jindan_click() //首页金蛋
+                //await sign_html() //签到
+                //await dk_info() //打卡
+                //await cy_info() //答题
+                //await water_info() //喝水
+                //await sleep_info() //睡觉
+                //await ggk() //刮刮卡
+                //await $.wait(8000)
+                //await lucky() //转盘抽奖
+                //await $.wait(1000)
+                //await lucky() //转盘抽奖
+                //await $.wait(1000)
+                //await lucky() //转盘抽奖
+                //await $.wait(1000)
+                //await h5_list() //看看赚
+                //await news() //看文章
+                //await renwu() //赚赚任务
                 await tixian_html() //提现
             }
 
