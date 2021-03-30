@@ -1,4 +1,5 @@
-name: aaa2
+
+name: aaa
 
 on:
   workflow_dispatch:
@@ -17,7 +18,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/HH97108/99.git ~/99
+          git clone https://github.com/ZhaoJjun/ooo.git ~/ooo
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -25,14 +26,14 @@ jobs:
       - name: npm install
         if: env.BBB_bububaoTOKEN
         run: |
-          cd ~/99
-          git HH97108 99
+          cd ~/ooo
+          git checkout ZIYE
           npm install
       - name: '运行 【步步宝】'
         if: env.BBB_bububaoTOKEN
         run: |
-          cd ~/99
-          node Task/aaa2.js
+          cd ~/ooo
+          node Task/bububao.js
         env:
           
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
