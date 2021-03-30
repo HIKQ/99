@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/ZhaoJjun/ooo.git ~/ooo
+          git clone https://github.com/HH97108/99.git ~/99
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -25,14 +25,14 @@ jobs:
       - name: npm install
         if: env.BBB_bububaoTOKEN
         run: |
-          cd ~/ooo
+          cd ~/99
           git checkout ZIYE
           npm install
       - name: '运行 【步步宝】'
         if: env.BBB_bububaoTOKEN
         run: |
-          cd ~/ooo
-          node Task/bububao.js
+          cd ~/99
+          node Task/aaa2.js
         env:
           
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
