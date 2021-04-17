@@ -128,7 +128,8 @@
       "icons": ["https://raw.githubusercontent.com/HH97108/99/master/Task/youth.png", "https://raw.githubusercontent.com/HH97108/99/master/Task/youth.png"],
       "script": "https://raw.githubusercontent.com/HH97108/99/master/Task/youth23.js"
     },
-{
+
+    {
       "author": "@HH97108", 
       "descs_html": [
         "<h4 align=\"center\">获取Cookie以及脚本配置请查看<a href=\"https://github.com/Sunert/Scripts/raw/master/TaskConf/youth/readme.md\">配置说明</a></h4>", 
@@ -199,6 +200,12 @@
           ]
         }
       ], 
+      "name": "中青看点", 
+      "icons": [
+        "https://raw.githubusercontent.com/HH97108/99/master/Task/youth.png", 
+        "https://raw.githubusercontent.com/HH97108/99/master/Task/youth.png"
+      ]
+    }, 
     {
       "id": "youthBanner",
       "name": "中青看看赚",
