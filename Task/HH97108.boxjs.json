@@ -136,7 +136,6 @@
       "<p>其中zq_nick、zqcash和zqcard为昵称、提现金额和早起打卡开关，无需另外获取，相关项设置后自动生成，cashurl_zq和cashbody_zq为提现请求，获取后方可自动提现，可选</p>"
     ],
       "keys": ["youthheader_zq", "read_zq", "readtime_zq", "youthheader_zq2", "read_zq2", "readtime_zq2", "youthheader_zq3", "read_zq3", "readtime_zq3", "youthheader_zq4", "read_zq4", "readtime_zq4"],
-      ],
       "repo" : "https://github.com/HH97108/99/master/Task/youth.js",
       "id" : "youth",
       "script" : "https://raw.githubusercontent.com/HH97108/99/master/Task/youth.js",
