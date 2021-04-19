@@ -157,7 +157,7 @@ async function all()
 				await readbook();	
 				
 				//收集阅读金币
-				//if(ReadTimes>0)
+				if(ReadTimes>0)
 				await receivecoin();
 				
 				//看视频奖励金币
