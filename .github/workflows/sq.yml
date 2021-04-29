@@ -1,4 +1,4 @@
-name: 书旗固定ck
+name: 书
 on:
   workflow_dispatch:
   schedule:
