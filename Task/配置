@@ -1,0 +1,300 @@
+;适用版本1.0.10以上
+;感谢nzw9314\eHpo1\ACL4SSR\Peng-YM\契阔 等等大神们，懒人配置 by Mazetsz
+;导入配置后，直接修改「默认机场」订阅里的链接即可。
+;更新节点（网易云订阅需要挂上节点才能更新），更新规则，即可畅游外网。
+;
+;关于脚本问题：
+;  1.缓存脚本（UI:复写规则里，看见显示未缓存的全都手动点一下右边的小按钮-更新脚本）
+;  2.缓存任务脚本（UI：构造请求，一个个缓存）后即可使用。
+;
+;网易云解锁，带远程节点（定时更新公益节点），以匹配相应网易云规则
+;  1.策略🎧𝐍𝐞𝐭𝐞𝐚𝐬𝐞𝐌𝐮𝐬𝐢𝐜为解锁开关（图标是网易云右下带一个小锁），默认直连，切换到🎧𝐍𝐞𝐭𝐞𝐚𝐬𝐞即为解锁状态。
+;  2.策略🎧𝐍𝐞𝐭𝐞𝐚𝐬𝐞用于自动筛选解锁节点，后续对于自建的解锁节点，名字带有（music|𝐌𝐮𝐬𝐢𝐜|Unbolck|云音乐）这些的会自动筛选到策略中。
+;  3.证书链接：https://cdn.jsdelivr.net/gh/nondanee/UnblockNeteaseMusic@master/ca.crt
+;  4.下载证书，进入「设置」>「通用」>「描述文件」，安装「UnblockNeteaseMusic Root CA」，并在「设置」>「通用」>「关于本机」>「证书信任设置」开启对「UnblockNeteaseMusic Root CA」的信任。
+;
+;𝐀𝐬𝐢𝐚𝐧𝐌𝐞𝐝𝐢𝐚策略为解锁B站地区，默认直连，切换为HKMT策略即为解锁模式。针对不同地区解锁，请在HKMT策略组切换（台湾or香港）
+;Youtube去广告，如果是YouTube Premium请在「hostname」里删掉googlevideo主机名，否则无法加载视频。
+;如不需要淘宝比价请删掉taobao主机名,更新脚本后，发现淘宝比价失效，请重装淘宝。
+;
+;最后提醒：要正常使用，请务必一定要缓存，复写里的缓存，构造请求里的缓存。麻烦都缓存！缓存！缓存！缓存！缓存！缓存！
+;不要出现问题后，直接在群中问，建议耐心排查，一般就是策略状态有问题，在软件UI（那个向下劈叉的箭头），可看见策略状态，看看是否节点没匹配好。
+
+;general 模块内为一些通用的设置参数项
+[general]
+;Quantumult X 会对 server_check_url 指定的网址进行相应测试，以确认节点的可用性
+;你同样可以在 server_local/remote 中，为节点、订阅单独指定server_check_url参数
+server_check_url= http://www.gstatic.com/generate_404
+resource_parser_url= https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/resource-parser.js
+
+
+#geo_location_checker=http://ip-api.com/json/?lang=zh-CN, https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IP_API.js
+
+#geo_location_checker=http://ifconfig.co/json,https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IPConfig.js
+
+#geo_location_checker= http://extreme-ip-lookup.com/json/ ,https://raw.githubusercontent.com/KOP-XIAO/QuantumultX/master/Scripts/IPCheck.js
+
+geo_location_checker= http://api.live.bilibili.com/ip_service/v1/ip_service/get_ip_addr? , https://raw.githubusercontent.com/HH97108/99/master/IP_bili.js
+
+
+# 本地服务器部分
+[server_local]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[rewrite_local]
+#圈x破解内购Document
+^https:\/\/license\.pdfexpert\.com\/api\/.*\/documents\/subscription\/(refresh$|check$) url script-response-body documents.js
+#步步宝解除限制
+https://bububao.duoshoutuan.com/user/login? url script-request-header rewrite.js
+
+
+[dns]
+server=119.29.29.29
+server=223.5.5.5
+server=114.114.114.114
+server=1.0.0.1
+server=8.8.8.8
+server=/*.taobao.com/223.5.5.5
+server=/*.tmall.com/223.5.5.5
+server=/*.alipay.com/223.5.5.5
+server=/*.alicdn.com/223.5.5.5
+server=/*.aliyun.com/223.5.5.5
+server=/*.jd.com/119.28.28.28
+server=/*.qq.com/119.28.28.28
+server=/*.tencent.com/119.28.28.28
+server=/*.weixin.com/119.28.28.28
+server=/*.bilibili.com/119.29.29.29
+server=/hdslb.com/119.29.29.29
+server=/*.163.com/119.29.29.29
+server=/*.126.com/119.29.29.29
+server=/*.126.net/119.29.29.29
+server=/*.127.net/119.29.29.29
+server=/*.netease.com/119.29.29.29
+server=/*.mi.com/119.29.29.29
+server=/*.xiaomi.com/119.29.29.29
+
+#以下为策略组[policy]部分
+# static 策略组中，你需要手动选择想要的节点/策略组。
+# available 策略组将按顺序选择你列表中第一个可用的节点。
+# round-robin 策略组，将按列表的顺序轮流使用其中的节点。
+# ssid 策略组，将根据你所设定的网络来自动切换节点/策略组
+;img-url 参数用于指定策略组图标，可远程，也可本地/iCloud(Quantumult X/Images路径下) （108*108 大小）
+;direct/proxy/reject 则只能用本地图标，名字分别为 direct.png, proxy.png,reject.png 放置于 Images 文件夹下即可生效 (108*108 大小)
+
+[policy]
+
+
+# 策略组
+
+# 节点选项
+static=𝐅𝐢𝐧𝐚𝐥, 𝐏𝐫𝐨𝐱𝐲, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Final.png
+static=𝐏𝐫𝐨𝐱𝐲, Auto, proxy, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/proxy.png
+
+#自动切换
+url-latency-benchmark=Auto, resource-tag-regex=1, server-tag-regex=.*, check-interval=300, tolerance=0, img-url=https://github.com/Koolson/Qure/raw/master/IconSet/Color/Auto.png
+
+
+# 健康策略(available) - 自动选择
+# 指向候选服务器的第一个可用服务器
+#available=健康策略, resource-tag-regex=.*, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/available.png
+
+# 静态策略(static) - 手动选择
+# 指向您手动选择的候选服务器
+#static=静态策略, 07.长期套餐覆盖IPLC专线, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/static.png
+
+# 负载均衡(round-robin) - 轮询调度
+# 指向在候选服务器中指向下一个服务器以进行下一次连接。
+#round-robin=负载均衡, server-tag-regex=.*, img-url=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Round_Robin.png
+static=Telegram, Auto, proxy, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Telegram.png
+
+static=YouTube, Auto, proxy, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/YouTube-W.png
+
+# 🔓网易云音乐灰色歌曲,需要节点支持解锁
+#static=𝐍𝐞𝐭𝐞𝐚𝐬𝐞𝐌𝐮𝐬𝐢𝐜, 𝐍𝐞𝐭𝐞𝐚𝐬𝐞, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/neteasemusic.png
+#static=𝐍𝐞𝐭𝐞𝐚𝐬𝐞, server-tag-regex=music|𝐌𝐮𝐬𝐢𝐜|Unbolck|云音乐, img-url= https://raw.githubusercontent.com/Orz-3/mini/master/Netease.png
+
+static=Netflix, Auto, proxy, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Netflix-W.png
+
+static=苹果服务, direct, proxy, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Apple.png
+
+static=国外网站, Auto, proxy, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Global.png
+
+static=国外影视, Auto, proxy, direct, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Streaming.png
+
+static=屏蔽系统更新, reject, direct, img-url=wrench.and.screwdriver.system
+
+#服务器远程订阅
+[server_remote]
+https://azi.azzico.me/link/tAtLNhz9eODDMP2S?sub=3&extend=1&lt=3, tag=1, update-interval=172800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/HCJS-8/sub1/main/README.md, tag=123, update-interval=604800, opt-parser=true, enabled=false
+https://proxypoolss.tk/vmess/sub, tag=Tag-1614205242, update-interval=86400, opt-parser=true, enabled=false
+https://www.1vpn.kr/api/v1/OneVpn/subscriptionsSSR?memberIdx=11505&access_token=d8d855c465198499868fb2b566ebee8d, tag=白嫖vpn, update-interval=604800, opt-parser=true, enabled=true
+音乐.txt, tag=🎧𝐍𝐞𝐭𝐞𝐚𝐬𝐞𝐌𝐮𝐬𝐢𝐜, update-interval=2592000, opt-parser=true, enabled=false
+#规则分流远程订阅
+[filter_remote]
+# > NeteaseMusic
+#https://raw.githubusercontent.com/JungegeCN/QXNeteaseMusic/master/NeteaseMusic.list, tag=𝐍𝐞𝐭𝐞𝐚𝐬𝐞𝐌𝐮𝐬𝐢𝐜, force-policy=𝐍𝐞𝐭𝐞𝐚𝐬𝐞𝐌𝐮𝐬𝐢𝐜, update-interval=86400, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Filter/Liby.txt, tag=🚫 广告拦截, force-policy=reject, update-interval=86400, opt-parser=false, enabled=true
+
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRule.list, tag=📵 广告拦截, force-policy=reject, update-interval=86400, opt-parser=false, enabled=true
+
+https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Filter/Sub/Telegram.txt, tag=Telegram, force-policy=Telegram, enabled=true
+
+https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Filter/Sub/YouTube.txt, tag=YouTube, force-policy=YouTube, enabled=true
+
+https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Filter/Sub/Netflix.txt, tag=Netflix, force-policy=Netflix, enabled=true
+
+https://raw.githubusercontent.com/DivineEngine/Profiles/master/Quantumult/Filter/Extra/Apple/AppStoreConnect.list, tag=🍏 TestFlight, force-policy=苹果服务, update-interval=86400, opt-parser=true, enabled=true
+
+https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Filter/Apple_CDN.txt, tag=🍏 苹果CDN 资源类(建议直连), force-policy=direct, enabled=true
+
+https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Filter/Apple_API.txt, tag=🍏 苹果API 服务类 (账号所在区), force-policy=苹果服务, enabled=true
+
+https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Filter/AsianMedia.txt, tag=📹 国内影视, force-policy=direct, enabled=true
+
+https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Filter/Domestic.txt, tag=🐼 国内网站, force-policy=direct, enabled=true
+
+https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Filter/Global.txt, tag=国外网站, force-policy=proxy, enabled=true
+
+https://raw.githubusercontent.com/eHpo1/Rules/master/QuantumultX/Filter/GlobalMedia.txt, tag=国外影视, force-policy=国外影视, enabled=true
+#支持本地/iCloud规则文件，位于Quantumult X/Profiles路径下
+;filter.txt, tag=本地分流, enabled=false
+
+#rewrite 复写远程订阅
+[rewrite_remote]
+食客江湖.txt, update-interval=-1, opt-parser=true, enabled=false
+书旗小说.txt, update-interval=86400, opt-parser=true, enabled=false
+https://raw.githubusercontent.com/HH97108/99/master/Task/rewrite-zq.plugin, tag=中青看点获取, update-interval=86400, opt-parser=true, enabled=false
+https://raw.githubusercontent.com/HH97108/99/master/Task/rewrite-zqread.plugin, tag=中青阅读获取, update-interval=86400, opt-parser=true, enabled=false
+https://raw.githubusercontent.com/HH97108/99/master/Task/rewrite-zqkkz.plugin, tag=看看赚获取, update-interval=86400, opt-parser=true, enabled=false
+陌嗨视频.txt, update-interval=86400, opt-parser=true, enabled=false
+ac.txt, tag=ac触发器, update-interval=86400, opt-parser=true, enabled=false
+中青合集.txt, update-interval=86400, opt-parser=true, enabled=false
+返利.txt, update-interval=86400, opt-parser=true, enabled=false
+https://raw.githubusercontent.com/Orz-3/QuantumultX/master/JS_GetCookie.conf, tag=Cookie获取, update-interval=86400, opt-parser=true, enabled=false
+https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/Rewrite_lhie1.conf, tag=lhie1去广告, update-interval=86400, opt-parser=false, enabled=true
+https://raw.githubusercontent.com/nzw9314/QuantumultX/master/Js.conf#out=Aweme+QQNews+10000+jd_price+greasy-fork&outhn=amemv.com+r.inews.qq.com+taobao.com, tag=nzw9314, update-interval=604800, opt-parser=true, enabled=true
+https://raw.githubusercontent.com/HH97108/99/master/acjs.sgmodule, tag=Github加速, update-interval=86400, opt-parser=true, enabled=true
+
+
+#本地分流规则(对于完全相同的某条规则，本地的将优先生效)
+[filter_local]
+host, m.vbiquge.com, direct
+host, wap.xsbiquge.com, direct
+;user-agent, ?abc*, proxy
+;host, www.google.com, proxy
+;host-keyword, adsite, reject
+;host-suffix, googleapis.com, proxy
+# 屏蔽系统更新
+host, mesu.apple.com, 屏蔽系统更新
+host, gdmf.apple.com, 屏蔽系统更新
+# 去掉YouTube++底部广告
+host-suffix, ehg-youtube.hitbox.com, reject
+
+# 网易云音乐
+host-suffix, music.126.net, direct
+
+ip-cidr, 10.0.0.0/8, direct
+ip-cidr, 127.0.0.0/8, direct
+ip-cidr, 172.16.0.0/12, direct
+ip-cidr, 192.168.0.0/16, direct
+ip-cidr, 224.0.0.0/24, direct
+geoip, cn, direct
+final, proxy
+
+
+[mitm]
+hostname = bububao.duoshoutuan.com,trade-acs.m.taobao.com, operation-api.jimistore.com, license.pdfexpert.com
+
+
+
+
+passphrase = A8A43F1F
+p12 = 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
+
+[task_local]
+10 3 * * * https://raw.githubusercontent.com/age174/-/main/skjh.js, tag=食客江湖, img-url=https://ae01.alicdn.com/kf/Ue353b658a4424a1e873d0b66620d06a41.jpg, enabled=true
+7 0-23 * * * https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/shuqi.js, tag=书旗小说, img-url=https://cdn.jsdelivr.net/gh/ziye888/JavaScript@master/Task/shuqi.png, enabled=false
+0 0 1 1 * https://cdn.jsdelivr.net/gh/ztxtop/x@main/zqread.js, tag=中青阅读1214, enabled=false
+
+
+
+
+
+
+7 0-23 * * * https://raw.githubusercontent.com/HH97108/99/master/Task/githubAC.js, tag=AC触发器, img-url=https://raw.githubusercontent.com/HH97108/99/master/Task/AB.png, enabled=true
+
+50 9-23 * * * https://raw.githubusercontent.com/HH97108/99/master/Task/baidu_speed.js, tag=百度极速极速版, enabled=false
+3 0-7/2 * * * https://raw.githubusercontent.com/Sunert/Scripts/master/Task/Youth_Read.js, tag=中青阅读, img-url=https://raw.githubusercontent.com/HH97108/99/master/Task/youth.png, enabled=true
+
+0,20,40 4-11,23 * * * https://raw.githubusercontent.com/HH97108/99/master/Task/youth2.js, tag=中青看点, img-url=https://raw.githubusercontent.com/HH97108/99/master/Task/youth.png, enabled=true
+
+
+10 6 * * * https://raw.githubusercontent.com/HH97108/99/master/Task/youth_banner.js, tag=中青浏览赚, img-url=https://raw.githubusercontent.com/Orz-3/task/master/youth.png, enabled=true
+
+
+
+10 8 * * * https://raw.githubusercontent.com/HH97108/99/master/Task/mhdsp.js, tag=陌嗨短视频, img-url=https://s3.ax1x.com/2021/02/06/yYzYWR.png, enabled=true
+
+
+
+*/12 10 * * * https://raw.githubusercontent.com/HH97108/99/master/Task/flw.js, tag=返利网, img-url=https://raw.githubusercontent.com/ChuheGit/1/main/QuantumultX/Gallery/API-Icon/flw.png, enabled=false
+
+
+0 6 * * * https://raw.githubusercontent.com/HH97108/99/master/Task/baidu.js, tag=百度提现, enabled=false
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7 1 * * * https://raw.githubusercontent.com/Sunert/Scripts/master/Task/weibo.js, tag=微博, img-url=https://raw.githubusercontent.com/Orz-3/task/master/weibo.png, enabled=false
+
+
+
+
+
+
+
+
+
+
+[http_backend]
+https://raw.githubusercontent.com/chavyleung/scripts/master/chavy.box.js, tag=BoxJs, path=^/, img-url=https://raw.githubusercontent.com/Orz-3/task/master/box.png, enabled=true
