@@ -6,7 +6,7 @@ name: 点
 on:
   workflow_dispatch:
   schedule:
-     - cron: '*/7 */2 * * *'
+     - cron: '0 0 29 2 *'
   watch:
     types: started
 
