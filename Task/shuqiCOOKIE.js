@@ -13,7 +13,7 @@ boxjs链接  https://cdn.jsdelivr.net/gh/ziye888/JavaScript@main/Task/ziye.boxjs
 把每一个ck在分别``里面填写，多账号换行 
 */
 
-modulees = 1 //1 选择方式一 2 选择方式二 3 选择方式三
+modulees = 2 //1 选择方式一 2 选择方式二 3 选择方式三
 
 
 
