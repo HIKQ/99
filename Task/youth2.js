@@ -10,7 +10,7 @@
 const $ = new Env("中青看点")
 $.date = new Date();
 $.utc8 = $.date.getTime() + ($.date.getTimezoneOffset() * 60 * 1000) + 8 * 60 * 60 * 1000;
-let notifyInterval = $.getdata("notifytimes")||50 //通知间隔，默认抽奖每50次通知一次，如需关闭全部通知请设为0
+let notifyInterval = $.getdata("notifytimes")||"100" //通知间隔，默认抽奖每50次通知一次，如需关闭全部通知请设为0
 let s = $.getdata('delay_rotary_zq')||"20" //转盘延迟时间
 const notify = $.isNode() ? require('./sendNotify') : '';
 const ONCard = $.getdata('zqcard')||"true" //早起打卡开关
