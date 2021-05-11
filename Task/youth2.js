@@ -10,17 +10,16 @@
 const $ = new Env("中青看点")
 $.date = new Date();
 $.utc8 = $.date.getTime() + ($.date.getTimezoneOffset() * 60 * 1000) + 8 * 60 * 60 * 1000;
-let notifyInterval = "100" //通知间隔，默认抽奖每50次通知一次，如需关闭全部通知请设为0
-let s = $.getdata('delay_rotary_zq')||'30' //转盘延迟时间
-const notify = $.isNode() ? require('./sendNotify') : '';
-const ONCard = $.getdata('zqcard')||'true' //早起打卡开关
-const withdrawcash = $.getdata('zqcash')||'30' //提现金额
+let notifyInterval = $.getdata("notifytimes") || 100; //通知间隔，默认抽奖每50次通知一次，如需关闭全部通知请设为0
+let ONCard = $.getdata('zqcard') || "true"; //早起打卡开关
+let s = $.getdata('delay_rotary_zq') || "30"; //转盘延迟时间
+let withdrawcash = $.getdata('zqcash') || 30; //提现金额
+let cardTime = $.getdata('zqtime') || "05"; //打卡时间
 let withdrawUrl = $.getdata('cashurl_zq');
 let withdrawBody = $.getdata('cashbody_zq');
 let cookieYouth = $.getdata('youthheader_zq');
 let ARTBODYs = $.getdata('read_zq');
 let READTIME = $.getdata('readtime_zq');
-let cardTime = $.getdata('zqtime')||"07";//打卡时间
 let rotaryscore=0,doublerotary=0; 
 
 let cookieArr = [], cookie = '',
