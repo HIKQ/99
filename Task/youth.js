@@ -13,7 +13,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 //const youthNode = $.isNode() ? require('./youth_env') : '';
 
 // 可设置部分
-let notifyInterval = $.getdata("notifytimes")||50 //通知间隔，默认抽奖每50次通知一次，如需关闭全部通知请设为0
+let notifyInterval = $.getdata("notifytimes")||100 //通知间隔，默认抽奖每50次通知一次，如需关闭全部通知请设为0
 let s = $.getdata('delay_rotary_zq')||"10" //转盘延迟时间
 const notify = $.isNode() ? require('./sendNotify') : '';
 const ONCard = $.getdata('zqcard')||"true" //早起打卡开关
