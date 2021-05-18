@@ -18,16 +18,21 @@ from datetime import datetime, timezone, timedelta
 # 清除App后台，重新启动App，找到 start.json 的请求，拷贝请求体，放入对应参数 YOUTH_STARTBODY
 
 cookies1 = {
-  'YOUTH_HEADER': {},
-  'YOUTH_READBODY': '',
-  'YOUTH_READTIMEBODY': '',
+  'YOUTH_HEADER': {&uid=51516835&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOwt4mxhaKc4K-4qmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon7drrmuq4N5hbGEY2Ft&cookie_id=7e9bb114568d434c2907e57d4c55c37f},
+  'YOUTH_READTIMEBODY': 'p=9NwGV8Ov71o%3DGvDnjwMsu_ld4qx0YVkhCGSN79Nz9uYVd_6x03zS0fnS8kKdOyWyDMKSICaFBvwH5U4nsR_vvJsjHH2Z81CBL7eyJjtPmVfyM0x8EAsS-_ESh4-JImy11uTAadxMJCYAdD7P_w27pQt6_tIUTgtnDG7LOKwRL-IZbYYNciqqQLJ4b2GwTBfDqMrEsTPjidr2yu-zwHdQyjsD9z2_Nh0NpubysP2piHJc3S5Y_ss2Spw9wXoYEUdOXsF8xDwL_ftCsXcBCUKZGReENYl6rZ0vURKitqD59u8PioNhRmEbMuvXdsY7T8MDW6YBc_C9gT6K2XsabVCfAfm-9A_7PnH-h3zNScIMkGovSPmDVVGGg_Oh9_iL24LfUsYgZNK7VfHUvb73unIE2eTBBCMQhgbd47-gzMY4kW-tWGrBW67W_X-fZRUwLS7RjK9qUJ9Nt_ns_nQhC31M6yakYI4W1nWaHIquZw-mz45AaCDkQOsVV7I6I98r9FnU4AKAyL1Fn8Uw7i4VWPNODa3JppSZi2dZnn5Qtv3pb5JNKdwZxY7te703y5Cm0q_UI4U35z9T3ZddDd3QSswWdR8Hvor5yL5YfS9Dnroc2w1HmsoIGZ5oSe036IsTLUMPV_dkK2iKxHhwbsvHhluN_pg6FjihoPCdsAfYueE_8wbsxrqScVoPOKxFcwceB7o38SDzuIa0YcYlQLixxjus05MKpByFITVTUAJaYgVx_NjAtcTeJ_rM5Dja7rwdqsqDQw%3D%3D',
   'YOUTH_WITHDRAWBODY': '',
-  'YOUTH_SHAREBODY': '',
-  'YOUTH_STARTBODY': ''
+  'YOUTH_SHAREBODY': 'access=4G&app_version=2.0.2&article_id=38469955&channel=80000000&channel_code=80000000&cid=80000000&client_version=2.0.2&device_brand=iphone&device_id=52189099&device_model=iPhone&device_platform=iphone&device_type=iphone&from=0&is_hot=0&isnew=1&mobile_type=2&net_type=2&openudid=61abb1e10502a7b0d39ede8d5e2c210e&os_version=14.4.2&phone_code=61abb1e10502a7b0d39ede8d5e2c210e&phone_network=4G&platform=3&request_time=1621315896&resolution=828x1472&sign=8ac7a4aece551dbf4d2938cf725087c4&sm_device_id=202105011416211d9400100bf13513500db458c0949e5201c3102fd3ce404e&stype=WEIXIN&szlm_ddid=D2zpT9A1BaT0nsdsi0H6WdaauyZsOoPoSn457KnGsBs2IXd5&time=1621315897&uid=51516835&uuid=61abb1e10502a7b0d39ede8d5e2c210e',
+  'YOUTH_STARTBODY': 'access=4G&app_version=2.0.2&channel=80000000&channel_code=80000000&cid=80000000&client_version=2.0.2&device_brand=iphone&device_id=52189099&device_model=iPhone&device_platform=iphone&device_type=iphone&isnew=1&mobile_type=2&net_type=2&openudid=61abb1e10502a7b0d39ede8d5e2c210e&os_version=14.4.2&phone_code=61abb1e10502a7b0d39ede8d5e2c210e&phone_network=4G&platform=3&request_time=1621315778&resolution=828x1472&sm_device_id=202105011416211d9400100bf13513500db458c0949e5201c3102fd3ce404e&szlm_ddid=D2zpT9A1BaT0nsdsi0H6WdaauyZsOoPoSn457KnGsBs2IXd5&time=1621315778&token=d9f9fbf7dfeb5ad502db38ad25fdfbd8&uid=51516835&uuid=61abb1e10502a7b0d39ede8d5e2c210e'
 }
-cookies2 = {}
+cookies2 = {
+  'YOUTH_HEADER2': {&uid=55130590&cookie=MDAwMDAwMDAwMJCMpN-w09Wtg5-Bb36eh6CPqHualq2jmrCarWOxt3mzhHyKm66oqmqXr6NthJl7mI-shMmXeqDau4StacS3o7GFon7drs-qrYJ5hW2EY2Ft&cookie_id=16872d073df6be9cd474f86f9b210361},
+  'YOUTH_READTIMEBODY2': 'p=9NwGV8Ov71o%3DGvDnjwMsu_ld4qx0YVkhCGSN79Nz9uYVd_6x03zS0fnS8kKdOyWyDMKSICaFBvwH5U4nsR_vvJsjHH2Z81CBL7eyJjtPmVfyM0x8EAsS-_ESh4-JImy11uTAadxMJCYAdD7P_w27pQt6_tIUTgtnDG7LOKwRL-IZbYYNciqqQLJ4b2GwTBfDqMrEsTPjidr2yu-zwHdQyjsD9z2_Nh0NpubysP2piHJc3S5Y_ss2Spw9wXoYEUdOXsF8xDwL_ftCsXcBCUKZGReENYl6rZ0vURKitqD59u8PioNhRmEbMuvXdsY7T8MDW6YBc_C9gT6Kl_0NXeZdsl9z5HxpKmtaE6FkQtEkaDDcIbO-Yjqxb4BJQ8HQ5O-rYwb1iDcFszyYPSIa98RPKic_55Ge4eNzTynrNFG0JM8GZ_ZgW8M4GrOv_Ahc6FGwO-ZxR7DP-jaT1uY8iUc-h_zuMphU32tmf9BHUhjEJZh62nTPie1bXgQLNH0Ox5RHLSBU8Iww5QZP-So58csb97lBtW5Qyi1Mt79v1onUTdW_gKBlluIAHRXtmLQuK9DZR02kQhLH1xhn2TCnKV-iwHDfd8g_py3ZAXly27rNtAkpwZeSaw0XVFNWRXXXROXb1swpY0geGXmUv2wQZpBKDhOEd-EBUFYq1SpMvYL97M8mOhlS2qraBv6HVSwVW5aq331DgwEPQ9zObc2xZDhgIA0XKDHL5lu6nPho-Tsi7rCpYI71AaUl7xVZIB8jj6h5Hg%3D%3D',
+  'YOUTH_WITHDRAWBODY2': '',
+  'YOUTH_SHAREBODY2': 'access=4G&app_version=2.0.2&article_id=38387394&channel=80000000&channel_code=80000000&cid=80000000&client_version=2.0.2&device_brand=iphone&device_id=52189099&device_model=iPhone&device_platform=iphone&device_type=iphone&from=0&is_hot=0&isnew=1&mobile_type=2&net_type=2&openudid=303c0ac8f658e2c54cf5579a22f07dec&os_version=14.4.2&phone_code=303c0ac8f658e2c54cf5579a22f07dec&phone_network=4G&platform=3&request_time=1621316189&resolution=828x1472&sign=b1fac4e6badf4d1fec4323d67c8d5180&sm_device_id=202105011416211d9400100bf13513500db458c0949e5201c3102fd3ce404e&stype=0&szlm_ddid=D2zpT9A1BaT0nsdsi0H6WdaauyZsOoPoSn457KnGsBs2IXd5&time=1621316189&uid=55130590&uuid=303c0ac8f658e2c54cf5579a22f07dec',
+  'YOUTH_STARTBODY2': 'access=4G&app_version=2.0.2&channel=80000000&channel_code=80000000&cid=80000000&client_version=2.0.2&device_brand=iphone&device_id=52189099&device_model=iPhone&device_platform=iphone&device_type=iphone&isnew=1&mobile_type=2&net_type=2&openudid=303c0ac8f658e2c54cf5579a22f07dec&os_version=14.4.2&phone_code=303c0ac8f658e2c54cf5579a22f07dec&phone_network=4G&platform=3&request_time=1621316082&resolution=828x1472&sm_device_id=202105011416211d9400100bf13513500db458c0949e5201c3102fd3ce404e&szlm_ddid=D2zpT9A1BaT0nsdsi0H6WdaauyZsOoPoSn457KnGsBs2IXd5&time=1621316083&token=d59c39b28404a497173c799e0dbc0d4b&uid=55130590&uuid=303c0ac8f658e2c54cf5579a22f07dec'
+}
 
-COOKIELIST = [cookies1,]  # 多账号准备
+COOKIELIST = [cookies1,cookies2]  # 多账号准备
 
 # ac读取环境变量
 if "YOUTH_HEADER1" in os.environ:
