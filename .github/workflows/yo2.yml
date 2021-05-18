@@ -35,7 +35,7 @@ jobs:
             YOUTH_READBODY2: ${{ secrets.YOUTH_READBODY2 }}  #非必须 账号2 body2
             YOUTH_REDBODY2: ${{ secrets.YOUTH_REDBODY2 }}  #非必须 账号2 body2
             YOUTH_READTIMEBODY2: ${{ secrets.YOUTH_READTIMEBODY2 }}  #非必须 账号2 body2
-            YOUTH_WITHDRAWBODY2: ${{ secrets.YOUTH_READTIMEBODY2 }}  #非必须 账号2提现 body2
+            YOUTH_WITHDRAWBODY2: ${{ secrets.Y YOUTH_WITHDRAWBODY2 }}  #非必须 账号2提现 body2
             BARK: ${{ secrets.BARK }}  #非必须 bark通知
             SCKEY: ${{ secrets.SCKEY }}  #非必须 server酱通知
             TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}  #非必须 tg机器人token
