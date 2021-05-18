@@ -2,7 +2,7 @@ name: 中
 
 on:
   schedule:
-    - cron: '*/10 5,23 * * *'
+    - cron: '0 0 29 2 *'
   watch:
     types: [started]
 jobs:
