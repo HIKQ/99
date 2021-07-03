@@ -124,7 +124,7 @@ GXRZ = '4.6.19 精确时长ck判定，10秒以上才获取'
 const $ = Env("书旗小说");
 $.idx = ($.idx = ($.getval('shuqiSuffix') || '1') - 1) > 0 ? ($.idx + 1 + '') : ''; // 账号扩展字符
 const notify = $.isNode() ? require("./sendNotify") : ``;
-const COOKIE = $.isNode() ? require("./shuqiCOOKIE") : ``;
+const COOKIE = $.isNode() ? require("./shuqiCOOKIE,shuqiCOOKIE2") : ``;
 const logs = 0; // 0为关闭日志，1为开启
 notifyttt = 1; // 0为关闭外部推送，1为12 23 点外部推送
 notifyInterval = 2; // 0为关闭通知，1为所有通知，2为12 23 点通知  ， 3为 6 12 18 23 点通知 
